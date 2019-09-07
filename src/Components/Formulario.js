@@ -22,8 +22,8 @@ const Formulario = () => {
 		Departamentos.push('Popayán','Almaguer','Argelia','Balboa','Bolívar','Buenos Aires','Cajibío')
 	}
 	
-	console.log(opciones);
-	console.log(Departamentos);
+//	console.log(opciones);
+//	console.log(Departamentos);
 
 	return (
 		<>

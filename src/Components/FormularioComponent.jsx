@@ -16,33 +16,44 @@ const FormularioComponent = () => {
 
 
     const verificarcod = codigo.split("")
-    console.log(verificarcod);
+    const verificarfecha=fecha.split("-")
+    const añofecha=parseInt(verificarfecha[0]);
+    console.log(typeof(añofecha));
 
+    
+    console.log(verificarcod);
+    console.log(verificarcod[0]);
+    console.log(verificarcod.length);
+    console.log(verificarfecha[0]);
+    
   
     const agregarproducto = async e => {
         e.preventDefault();
 
         const verificarcod = codigo.split("")
-        console.log(verificarcod[0]);
+        
+        console.log(verificarcod);
+        
 
         //construimos el objeto
         
         if (nombreproducto  === '' || fecha === ''|| codigo=== '') {
             guardarerror(true)
             return;
-        } else if (verificarcod[0] === "0"|| verificarcod.length > 4) {
+        } else if (verificarcod[0] === "0" || verificarcod.length < 4) {
+            console.log("entre en el error de 0 o de fecha");
+            
             guardarerror(false)// todos los campos son requeridos
-            guardarerror1(false)// el codigo de barras no tiene 4 digitos 
             guardarerror2(true)// el numero no comienza  con 0
-            console.log(verificarcod);
+            guardarerror1(false)
             
             return;
-        }else if (verificarcod.length > 4) {
+        }else if (añofecha <= 2000) {
             guardarerror(false)// todos los campos son requeridos
-            guardarerror1(true)// el codigo de barras no tiene 4 digitos 
-            guardarerror2(false)// el numero comienza con 0
-            return;
+            guardarerror2(false)// el numero no comienza  con 0
+            guardarerror1(true)//la fecha tiene que ser mayor al año 2000
         }
+        
         else {
             //ahora si construimos el objeto
 
@@ -52,8 +63,8 @@ const FormularioComponent = () => {
                 fecha
 
             }
-            // mandamos la info
-            try {
+               // mandamos la info
+               try {
 
                 const resultado = await axios.post('http://localhost:4000/Restaurant', objetoContenido);
                 console.log(resultado);
@@ -72,9 +83,14 @@ const FormularioComponent = () => {
                     text: 'algo ocurrio amigo!',
 
                 })
-                console.log(error);
-
             }
+
+            guardarerror(false)// todos los campos son requeridos
+            guardarerror2(false)// el numero no comienza  con 0
+            guardarerror1(false)// el numero no comienza  con 0
+            // mandamos la info
+            console.log(objetoContenido);
+            console.log("objeto enviado");
             
         }
 
@@ -84,9 +100,8 @@ const FormularioComponent = () => {
         <div className="col-md-8 mx-auto ">
             <h1 className="text-center">Parcial WWWW</h1>
             {(error ? <Error mensaje="todos los campos son obligatorios" /> : null)}
-            {(error1 ? <Error mensaje=" el codigo de barras no tiene nueve 4" /> : null)}
-            {(error2 ? <Error mensaje=" el codigo de barras no tiene un numero mayor a 0" /> : null)}
-            
+            {(error2 ? <Error mensaje=" el codigo de barras no puede comenzar con 0 o tener mas de 4 digitos"  /> : null)}
+            {(error1 ? <Error mensaje="la fecha tiene que ser mayor al año 2000"  /> : null)}
             <Formulario/>
             <form
                 className="mt-5"

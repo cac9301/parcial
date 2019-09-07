@@ -11,6 +11,18 @@
       "codigo": "123",
       "fecha": "2019-12-31",
       "id": 28
+    },
+    {
+      "nombreproducto": "Carlos Arturo ",
+      "codigo": "1234",
+      "fecha": "2020-02-01",
+      "id": 29
+    },
+    {
+      "nombreproducto": "Carlos Arturo ",
+      "codigo": "1234",
+      "fecha": "2001-02-01",
+      "id": 30
     }
   ]
 }
