@@ -13,13 +13,21 @@ const Formulario = () => {
 
 	const optiones = ["",'cauca', 'valle','huila'];
 	const Departamentos = [""];
+	console.log(opciones);
 	
 	
 	
 	if (opciones === 'valle') {
+		console.log('entre en valle');
+		
 		Departamentos.push('cali','cartago','restro','Alcalá','Andalucía','Ansermanuevo','Argelia')
-	}else if (optiones === 'cauca'){
+	}
+	else if (opciones === 'cauca')
+	{
+		console.log('entre en cauca');
 		Departamentos.push('Popayán','Almaguer','Argelia','Balboa','Bolívar','Buenos Aires','Cajibío')
+		console.log(Departamentos);
+		
 	}
 	
 //	console.log(opciones);

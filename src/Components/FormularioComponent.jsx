@@ -15,26 +15,12 @@ const FormularioComponent = () => {
     const [error2, guardarerror2] = useState(false)
 
 
-    const verificarcod = codigo.split("")
     const verificarfecha=fecha.split("-")
     const añofecha=parseInt(verificarfecha[0]);
-    console.log(typeof(añofecha));
-
-    
-    console.log(verificarcod);
-    console.log(verificarcod[0]);
-    console.log(verificarcod.length);
-    console.log(verificarfecha[0]);
-    
-  
+        
     const agregarproducto = async e => {
         e.preventDefault();
-
         const verificarcod = codigo.split("")
-        
-        console.log(verificarcod);
-        
-
         //construimos el objeto
         
         if (nombreproducto  === '' || fecha === ''|| codigo=== '') {
@@ -49,6 +35,7 @@ const FormularioComponent = () => {
             
             return;
         }else if (añofecha <= 2000) {
+            console.log("entre en el error de fecha");
             guardarerror(false)// todos los campos son requeridos
             guardarerror2(false)// el numero no comienza  con 0
             guardarerror1(true)//la fecha tiene que ser mayor al año 2000
@@ -87,7 +74,7 @@ const FormularioComponent = () => {
 
             guardarerror(false)// todos los campos son requeridos
             guardarerror2(false)// el numero no comienza  con 0
-            guardarerror1(false)// el numero no comienza  con 0
+            guardarerror1(false)// el año no es mayor al  2000
             // mandamos la info
             console.log(objetoContenido);
             console.log("objeto enviado");
