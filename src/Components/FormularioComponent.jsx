@@ -16,29 +16,34 @@ const FormularioComponent = () => {
 
 
     const verificarcod = codigo.split("")
-    console.log(verificarcod.length);
-    console.log(nombreproducto);
+    console.log(verificarcod);
 
   
     const agregarproducto = async e => {
         e.preventDefault();
 
         const verificarcod = codigo.split("")
-        console.log(verificarcod.length);
+        console.log(verificarcod[0]);
 
         //construimos el objeto
-        if (verificarcod.length < 4) {
-            guardarerror1(true)
-            return;
-        } else if (verificarcod.length[0] > 0) {
-            guardarerror1(false)
-            guardarerror2(true)
-            return;
-        }
-        else if (nombreproducto  === '' || fecha === ''|| codigo=== '') {
+        
+        if (nombreproducto  === '' || fecha === ''|| codigo=== '') {
             guardarerror(true)
             return;
-        } else {
+        } else if (verificarcod[0] === "0"|| verificarcod.length > 4) {
+            guardarerror(false)// todos los campos son requeridos
+            guardarerror1(false)// el codigo de barras no tiene 4 digitos 
+            guardarerror2(true)// el numero no comienza  con 0
+            console.log(verificarcod);
+            
+            return;
+        }else if (verificarcod.length > 4) {
+            guardarerror(false)// todos los campos son requeridos
+            guardarerror1(true)// el codigo de barras no tiene 4 digitos 
+            guardarerror2(false)// el numero comienza con 0
+            return;
+        }
+        else {
             //ahora si construimos el objeto
 
             const objetoContenido = {
@@ -70,7 +75,7 @@ const FormularioComponent = () => {
                 console.log(error);
 
             }
-            guardarerror(false)
+            
         }
 
     }
@@ -79,8 +84,8 @@ const FormularioComponent = () => {
         <div className="col-md-8 mx-auto ">
             <h1 className="text-center">Parcial WWWW</h1>
             {(error ? <Error mensaje="todos los campos son obligatorios" /> : null)}
-            {(error1 ? <Error mensaje=" el codigo de barras no tiene nueve digitos" /> : null)}
-            {(error2 ? <Error mensaje=" el codigo de barras no comienza con 4,6,9" /> : null)}
+            {(error1 ? <Error mensaje=" el codigo de barras no tiene nueve 4" /> : null)}
+            {(error2 ? <Error mensaje=" el codigo de barras no tiene un numero mayor a 0" /> : null)}
             
             <Formulario/>
             <form

@@ -1,19 +1,16 @@
 {
   "Restaurant": [
     {
-      "nombreproducto": "LECHE",
-      "codigo": "455555490890",
-      "empaque": "BOTELLA",
-      "precio": "3000",
-      "categoria": "cereales",
-      "fecha": "2231-12-21",
-      "id": 22
+      "nombreproducto": "123",
+      "codigo": "123",
+      "fecha": "2015-12-31",
+      "id": 27
     },
     {
       "nombreproducto": "LECHE",
-      "codigo": "123456",
-      "fecha": "2019-12-30",
-      "id": 23
+      "codigo": "123",
+      "fecha": "2019-12-31",
+      "id": 28
     }
   ]
 }
