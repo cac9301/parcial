@@ -84,6 +84,7 @@ const FormularioComponent = () => {
             guardarerror(false)// todos los campos son requeridos
             guardarerror2(false)// el numero no comienza  con 0
             guardarerror1(false)// el año no es mayor al  2000
+            guardarerror3(false)// fecha mayor a 20000
             // mandamos la info
             console.log(objetoContenido);
             console.log("objeto enviado");

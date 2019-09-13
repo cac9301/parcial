@@ -41,15 +41,30 @@
       "codigo": "12345",
       "fecha": "2001-01-01",
       "id": 33
-<<<<<<< HEAD
     },
     {
       "nombreproducto": "1234",
       "codigo": "carlos",
       "fecha": "2001-01-01",
       "id": 34
-=======
->>>>>>> 751d0d2db06bebfef46e6af783f15b6e71a39856
+    },
+    {
+      "nombreproducto": "12123123",
+      "codigo": "carlos",
+      "fecha": "2001-12-01",
+      "id": 35
+    },
+    {
+      "nombreproducto": "LECHE",
+      "codigo": "123456",
+      "fecha": "2001-12-31",
+      "id": 36
+    },
+    {
+      "nombreproducto": "123231",
+      "codigo": "carlos",
+      "fecha": "2001-01-01",
+      "id": 37
     }
   ]
 }
