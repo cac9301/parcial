@@ -41,12 +41,15 @@
       "codigo": "12345",
       "fecha": "2001-01-01",
       "id": 33
+<<<<<<< HEAD
     },
     {
       "nombreproducto": "1234",
       "codigo": "carlos",
       "fecha": "2001-01-01",
       "id": 34
+=======
+>>>>>>> 751d0d2db06bebfef46e6af783f15b6e71a39856
     }
   ]
 }
