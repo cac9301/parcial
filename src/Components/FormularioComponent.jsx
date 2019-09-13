@@ -13,6 +13,7 @@ const FormularioComponent = () => {
     const [error, guardarerror] = useState(false)
     const [error1, guardarerror1] = useState(false)
     const [error2, guardarerror2] = useState(false)
+    const [error3, guardarerror3] = useState(false)
 
 
     const verificarfecha=fecha.split("-")
@@ -21,24 +22,32 @@ const FormularioComponent = () => {
     const agregarproducto = async e => {
         e.preventDefault();
         const verificarcod = codigo.split("")
+        const verificarname=nombreproducto.split("")
         //construimos el objeto
         
         if (nombreproducto  === '' || fecha === ''|| codigo=== '') {
             guardarerror(true)
             return;
-        } else if (verificarcod[0] === "0" || verificarcod.length < 4) {
+        }else if(verificarname[0] === "0" ){
+            guardarerror(false)
+            guardarerror1(true)// el numero no comienza  con 0
+        } 
+        
+        else if ( verificarcod.length < 4) {
             console.log("entre en el error de 0 o de fecha");
             
             guardarerror(false)// todos los campos son requeridos
-            guardarerror2(true)// el numero no comienza  con 0
-            guardarerror1(false)
+            guardarerror1(false)// el numero no comienza  con 0
+            guardarerror2(true)// alfanumerico mayor a 4
+            
             
             return;
         }else if (añofecha <= 2000) {
             console.log("entre en el error de fecha");
             guardarerror(false)// todos los campos son requeridos
-            guardarerror2(false)// el numero no comienza  con 0
-            guardarerror1(true)//la fecha tiene que ser mayor al año 2000
+            guardarerror1(false)// el numero no comienza  con 0
+            guardarerror2(false)// alfanumerico mayor a 4
+            guardarerror3(true)// fecha mayor a 20000
         }
         
         else {
@@ -75,6 +84,7 @@ const FormularioComponent = () => {
             guardarerror(false)// todos los campos son requeridos
             guardarerror2(false)// el numero no comienza  con 0
             guardarerror1(false)// el año no es mayor al  2000
+            guardarerror3(false)// el año no es mayor al  2000
             // mandamos la info
             console.log(objetoContenido);
             console.log("objeto enviado");
@@ -87,15 +97,18 @@ const FormularioComponent = () => {
         <div className="col-md-8 mx-auto ">
             <h1 className="text-center">Parcial WWWW</h1>
             {(error ? <Error mensaje="todos los campos son obligatorios" /> : null)}
-            {(error2 ? <Error mensaje=" el codigo de barras no puede comenzar con 0 o tener mas de 4 digitos"  /> : null)}
-            {(error1 ? <Error mensaje="la fecha tiene que ser mayor al año 2000"  /> : null)}
+            {(error1 ? <Error mensaje=" el numero no puede comenzar con 0 " /> : null)}
+            {(error2 ? <Error mensaje=" el tamaño del alfanumerico tiene que ser mayor a 4 digitos "  /> : null)}
+            {(error3 ? <Error mensaje="la fecha tiene que ser mayor al año 2000"  /> : null)}
+            
+            
             <Formulario/>
             <form
                 className="mt-5"
                 onSubmit={agregarproducto}>
 
                 <div className="form-group">
-                    <label>Nombre producto</label>
+                    <label>numerico</label>
                     <input
                         type="text"
                         className="form-control"
@@ -106,7 +119,7 @@ const FormularioComponent = () => {
                 </div>
 
                 <div className="form-group">
-                    <label>Numero Bar</label>
+                    <label>alfanumerico</label>
                     <input
                         type="text"
                         className="form-control"

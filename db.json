@@ -41,6 +41,12 @@
       "codigo": "12345",
       "fecha": "2001-01-01",
       "id": 33
+    },
+    {
+      "nombreproducto": "1234",
+      "codigo": "carlos",
+      "fecha": "2001-01-01",
+      "id": 34
     }
   ]
 }
