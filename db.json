@@ -1,70 +1,9 @@
 {
   "Restaurant": [
     {
-      "nombreproducto": "123",
-      "codigo": "123",
-      "fecha": "2015-12-31",
-      "id": 27
-    },
-    {
-      "nombreproducto": "LECHE",
-      "codigo": "123",
-      "fecha": "2019-12-31",
-      "id": 28
-    },
-    {
-      "nombreproducto": "Carlos Arturo ",
-      "codigo": "1234",
-      "fecha": "2020-02-01",
-      "id": 29
-    },
-    {
-      "nombreproducto": "Carlos Arturo ",
-      "codigo": "1234",
-      "fecha": "2001-02-01",
-      "id": 30
-    },
-    {
-      "nombreproducto": "Carlos Arturo ",
-      "codigo": "1234",
-      "fecha": "2019-12-31",
-      "id": 31
-    },
-    {
-      "nombreproducto": "Carlos Arturo ",
-      "codigo": "1234",
-      "fecha": "2001-12-31",
-      "id": 32
-    },
-    {
-      "nombreproducto": "Carlos Arturo ",
-      "codigo": "12345",
-      "fecha": "2001-01-01",
-      "id": 33
-    },
-    {
-      "nombreproducto": "1234",
-      "codigo": "carlos",
-      "fecha": "2001-01-01",
-      "id": 34
-    },
-    {
-      "nombreproducto": "12123123",
-      "codigo": "carlos",
-      "fecha": "2001-12-01",
-      "id": 35
-    },
-    {
-      "nombreproducto": "LECHE",
-      "codigo": "123456",
-      "fecha": "2001-12-31",
-      "id": 36
-    },
-    {
-      "nombreproducto": "123231",
-      "codigo": "carlos",
-      "fecha": "2001-01-01",
-      "id": 37
+      "id": 43,
+      "opciones": "valle",
+      "departamento": "cali"
     }
   ]
 }
